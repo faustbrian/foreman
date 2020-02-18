@@ -1,13 +1,13 @@
 # foreman
 
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/kodekeep/foreman/run-tests?label=tests)](https://github.com/kodekeep/foreman/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Code Coverage](https://badgen.net/codecov/c/github/kodekeep/foreman)](https://codecov.io/gh/kodekeep/foreman)
-[![Minimum Node.js Version](https://badgen.net/npm/node/@kodekeep/foreman)](https://www.npmjs.com/package/@kodekeep/foreman)
-[![Latest Version](https://badgen.net/npm/v/@kodekeep/foreman)](https://www.npmjs.com/package/@kodekeep/foreman)
-[![Total Downloads](https://badgen.net/npm/dt/kodekeep/foreman)](https://npmjs.org/package/@kodekeep/foreman)
-[![License](https://badgen.net/npm/license/kodekeep/foreman)](https://npmjs.org/package/@kodekeep/foreman)
+[![Latest Version](https://badgen.net/npm/v/@kodekeep/foreman)](https://npmjs.com/package/@kodekeep/foreman)
+[![Software License](https://badgen.net/npm/license/@kodekeep/foreman)](https://npmjs.com/package/@kodekeep/foreman)
+[![Build Status](https://img.shields.io/github/workflow/status/kodekeep/foreman/run-tests?label=tests)](https://github.com/kodekeep/foreman/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Coverage Status](https://badgen.net/codeclimate/coverage/kodekeep/foreman)](https://codeclimate.com/github/kodekeep/foreman)
+[![Quality Score](https://badgen.net/codeclimate/maintainability/kodekeep/foreman)](https://codeclimate.com/github/kodekeep/foreman)
+[![Total Downloads](https://badgen.net/npm/dt/kodekeep/foreman)](https://npmjs.com/package/@kodekeep/foreman)
 
-> Programmatic use of pm2 without callback hell.
+This package was created by, and is maintained by [Brian Faust](https://github.com/faustbrian), and provides programmatic use of pm2 without callback hell.
 
 ## Installation
 
@@ -37,6 +37,10 @@ If you discover a security vulnerability within this package, please send an e-m
 
 This project exists thanks to all the people who [contribute](../../contributors).
 
+## Support Us
+
+We invest a lot of resources into creating and maintaining our packages. You can support us and the development through [GitHub Sponsors](https://github.com/sponsors/faustbrian).
+
 ## License
 
-Mozilla Public License Version 2.0 (MPL-2.0). Please see [License File](LICENSE.md) for more information.
+Foreman is an open-sourced software licensed under the [MPL-2.0](LICENSE.md).
