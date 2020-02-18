@@ -36,11 +36,9 @@ jobs:
             - name: Install dependencies
               run: yarn install --frozen-lockfile
 
-            - name: Execute tests
-              run: yarn test
-
-            - uses: codecov/codecov-action@v1
+            - name: Execute tests & Report coverage
+              uses: paambaati/codeclimate-action@v2.4.0
+              env:
+                  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
               with:
-                  token: ${{ secrets.CODECOV_TOKEN }}
-                  file: .coverage/clover.xml
-                  fail_ci_if_error: true
+                  coverageCommand: yarn test
