@@ -24,17 +24,20 @@ jobs:
             - uses: actions/cache@v1
               id: yarn-cache
               with:
-                path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                restore-keys: ${{ runner.os }}-yarn-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Setup Node.js ${{ matrix.node }}
               uses: actions/setup-node@v1
               with:
-                node-version: ${{ matrix.node }}
+                  node-version: ${{ matrix.node }}
 
             - name: Install dependencies
               run: yarn install --frozen-lockfile
+
+            - name: Install pm2
+              run: yarn global add pm2
 
             - name: Execute tests & Report coverage
               uses: paambaati/codeclimate-action@v2.5.5
