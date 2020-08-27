@@ -713,24 +713,19 @@
   resolved "https://registry.yarnpkg.com/@types/hapi__catbox/-/hapi__catbox-10.2.2.tgz#b13fbdd6006c8793eb80919158593bc2bf8307c4"
   integrity sha512-AWK70LgRsRWL1TNw+aT0IlS56E0pobvFdr/en0K8XazyK4Ey6T/jXhQqv/iQ6FJAAU+somMzgmt9fWq2TaaOkA==
 
-"@types/hapi__hapi@^19.0.2":
-  version "19.0.2"
-  resolved "https://registry.yarnpkg.com/@types/hapi__hapi/-/hapi__hapi-19.0.2.tgz#a05cc41f1991db7b7f989ef6b2dd6a8662919949"
-  integrity sha512-Z+Xmah1MnTNBhsS0rvY4nQeJ09MGxFkJ4vWlxVzR5XtGBzWFhwnRwtWGVivnaEj+qu+xzgajvDH6qp4DB6LcdA==
+"@types/hapi__hapi@^20.0.0":
+  version "20.0.0"
+  resolved "https://registry.yarnpkg.com/@types/hapi__hapi/-/hapi__hapi-20.0.0.tgz#bc83f9589f7be39ecb31fcff9d961c279c9923d0"
+  integrity sha512-Yh/ZNoGcwHTggd/JoeH0DMpwb3Hotw299kjEmFv3WQv+gSi4B6EWQ0tvZx6109JoongCz6HSdnCFKweMEw2G3g==
   dependencies:
     "@hapi/boom" "^9.0.0"
     "@hapi/iron" "^6.0.0"
     "@types/hapi__catbox" "*"
-    "@types/hapi__joi" "*"
     "@types/hapi__mimos" "*"
     "@types/hapi__podium" "*"
     "@types/hapi__shot" "*"
+    "@types/joi" "*"
     "@types/node" "*"
-
-"@types/hapi__joi@*":
-  version "16.0.10"
-  resolved "https://registry.yarnpkg.com/@types/hapi__joi/-/hapi__joi-16.0.10.tgz#7e259ef3100b8e04b2eb1643e2e0b01427cde739"
-  integrity sha512-SJawJYHi9Hwh4A3u7BEVYDAkcf9HGmUU32+ruVBAl0Q30LUC2RgDK1xPi3AJbhR6/CDN3a989SjJtR7OwA7eRA==
 
 "@types/hapi__mimos@*":
   version "4.1.0"
@@ -778,6 +773,11 @@
   dependencies:
     jest-diff "^25.1.0"
     pretty-format "^25.1.0"
+
+"@types/joi@*":
+  version "14.3.4"
+  resolved "https://registry.yarnpkg.com/@types/joi/-/joi-14.3.4.tgz#eed1e14cbb07716079c814138831a520a725a1e0"
+  integrity sha512-1TQNDJvIKlgYXGNIABfgFp9y0FziDpuGrd799Q5RcnsDu+krD+eeW/0Fs5PHARvWWFelOhIG2OPCo6KbadBM4A==
 
 "@types/json-schema@^7.0.3":
   version "7.0.4"
