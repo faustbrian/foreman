@@ -67,7 +67,7 @@
 		"execa": "^4.0.0"
 	},
 	"devDependencies": {
-		"@hapi/hapi": "^19.1.1",
+		"@hapi/hapi": "^20.0.0",
 		"@sindresorhus/tsconfig": "^0.7.0",
 		"@types/hapi__hapi": "^19.0.2",
 		"@types/jest": "^25.1.4",
