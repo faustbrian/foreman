@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "master"
+      - "develop"
+  pull_request:
+    types: [ready_for_review, synchronize, opened]
+
+jobs:
+  conflicts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Merge Conflict finder
+        uses: olivernybroe/action-conflict-finder@v1.1
+
+  format:
+    needs: [conflicts]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - name: Run Format
+        run: yarn run format
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "style: resolve style guide violations"
+          branch: ${{ github.head_ref }}
+
+  unit:
+    needs: [format]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Install pm2
+        run: npm install pm2 -g
+
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - name: Run Tests
+        run: yarn run test
+
+  publish:
+    needs: [unit]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - name: Publish to npm
+        run: yarn npm publish --tolerate-republish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
