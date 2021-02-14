@@ -1,0 +1,4 @@
+{
+    "*.{yml,md}": ["prettier --write"],
+    "*.{ts,js,json}": ["yarn format"]
+}
