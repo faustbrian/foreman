@@ -87,9 +87,9 @@
 		"jest-extended": "^0.11.5",
 		"prettier": "^2.2.1",
 		"rimraf": "^3.0.2",
+		"semantic-release": "^17.3.9",
 		"ts-jest": "^26.4.4",
 		"typescript": "^4.1.3",
-		"typescript-language-server": "^0.5.1",
-		"semantic-release": "^17.3.9"
+		"typescript-language-server": "^0.5.1"
 	}
 }
