@@ -58,7 +58,11 @@ export class Foreman {
 		}
 
 		if (opts.args) {
-			command += ` -- ${opts.args}`;
+			if (typeof opts.args === "string") {
+				command += ` -- ${opts.args}`;
+			} else {
+				command += ` -- ${this.flagsToString(opts.args)}`;
+			}
 		}
 
 		return this.shellSync(command);
