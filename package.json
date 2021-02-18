@@ -1,6 +1,6 @@
 {
 	"name": "@konceiver/foreman",
-	"version": "1.0.0",
+	"version": "2.0.1",
 	"description": "Programmatic use of pm2 without callback hell.",
 	"homepage": "https://github.com/konceiver/foreman",
 	"bugs": {
@@ -28,41 +28,6 @@
 		"test": "jest",
 		"test:watch": "jest --watchAll",
 		"semantic-release": "semantic-release"
-	},
-	"jest": {
-		"bail": true,
-		"collectCoverage": true,
-		"collectCoverageFrom": [
-			"src/**/*.ts",
-			"!**/node_modules/**"
-		],
-		"coverageDirectory": "<rootDir>/.coverage",
-		"coverageReporters": [
-			"json",
-			"lcov",
-			"text",
-			"clover",
-			"html"
-		],
-		"moduleFileExtensions": [
-			"ts",
-			"tsx",
-			"js",
-			"jsx",
-			"json",
-			"node"
-		],
-		"setupFilesAfterEnv": [
-			"jest-extended"
-		],
-		"testEnvironment": "node",
-		"testMatch": [
-			"**/*.test.ts"
-		],
-		"transform": {
-			"^.+\\.tsx?$": "ts-jest"
-		},
-		"verbose": true
 	},
 	"dependencies": {
 		"execa": "^5.0.0"
