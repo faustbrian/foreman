@@ -70,23 +70,3 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: npx semantic-release
-
-    publish:
-        needs: [unit]
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-            - name: Setup .npmrc file to publish to npm
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 12.x
-                  registry-url: https://registry.npmjs.org
-            - name: Install dependencies
-              run: yarn install --immutable --immutable-cache
-            - name: Publish to npm
-              run: yarn npm publish --tolerate-republish --access public
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
