@@ -9,6 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 1.0.0 - 2020-02-XX
 
--   initial release
+- initial release
 
 [unreleased]: https://github.com/konceiver/foreman/compare/master...develop

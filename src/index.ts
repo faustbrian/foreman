@@ -38,15 +38,22 @@ export class Foreman {
 		try {
 			const processes: ProcessDescription[] | undefined = this.list();
 
-			return processes
-				? processes.find((process: ProcessDescription) => [process.id, process.name].includes(id))
-				: undefined;
+			if (processes) {
+				return processes.find((process: ProcessDescription) =>
+					[process.id, process.name].includes(id)
+				);
+			}
+
+			return undefined;
 		} catch (error) {
 			return undefined;
 		}
 	}
 
-	public start(opts: Record<string, any>, flags: Record<string, any> = {}): ExecaSyncReturnValue {
+	public start(
+		opts: Record<string, any>,
+		flags: Record<string, any> = {}
+	): ExecaSyncReturnValue {
 		let command = `pm2 start ${opts.script}`;
 
 		if (opts.node_args) {
@@ -68,7 +75,10 @@ export class Foreman {
 		return this.shellSync(command);
 	}
 
-	public stop(id: ProcessIdentifier, flags: Record<string, any> = {}): ExecaSyncReturnValue {
+	public stop(
+		id: ProcessIdentifier,
+		flags: Record<string, any> = {}
+	): ExecaSyncReturnValue {
 		let command = `pm2 stop ${id}`;
 
 		if (flags) {
@@ -78,7 +88,10 @@ export class Foreman {
 		return this.shellSync(command);
 	}
 
-	public restart(id: ProcessIdentifier, flags: Record<string, any> = { "update-env": true }): ExecaSyncReturnValue {
+	public restart(
+		id: ProcessIdentifier,
+		flags: Record<string, any> = { "update-env": true }
+	): ExecaSyncReturnValue {
 		let command = `pm2 restart ${id}`;
 
 		if (flags) {
@@ -185,7 +198,9 @@ export class Foreman {
 				if (value === true) {
 					mappedFlags.push(`--${key}`);
 				} else if (typeof value === "string") {
-					mappedFlags.push(value.includes(" ") ? `--${key}="${value}"` : `--${key}=${value}`);
+					mappedFlags.push(
+						value.includes(" ") ? `--${key}="${value}"` : `--${key}=${value}`
+					);
 				} else {
 					mappedFlags.push(`--${key}=${value}`);
 				}
