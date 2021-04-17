@@ -1,0 +1,23 @@
+name: Dependencies
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Update dependencies
+        run: npx npm-check-updates -u
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: update dependencies"
+          branch: ${{ github.head_ref }}
