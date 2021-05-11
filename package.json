@@ -29,7 +29,7 @@
 		"execa": "^5.0.0"
 	},
 	"devDependencies": {
-		"@hapi/hapi": "^20.1.2",
+		"@hapi/hapi": "^20.1.3",
 		"@konceiver/tease": "^2.0.1",
 		"@types/hapi__hapi": "^20.0.8"
 	},
