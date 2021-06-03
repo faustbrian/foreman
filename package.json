@@ -26,7 +26,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"execa": "^5.0.1"
+		"execa": "^5.1.0"
 	},
 	"devDependencies": {
 		"@hapi/hapi": "^20.1.3",
